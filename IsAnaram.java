@@ -1,8 +1,4 @@
-package algos;
-
-import java.util.Arrays;
-
-public class IsAnaram {
+class IsAnaram {
     public boolean isAnagram(String s, String t) {
         //sort s
         char[] s_array = s.toCharArray();

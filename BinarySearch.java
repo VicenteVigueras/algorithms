@@ -1,6 +1,4 @@
-package algos;
-
-public class BinarySearch {
+class BinarySearch {
     public static void main(String[] args) {
         int[] list = {1, 2, 3, 4, 5, 6, 7};
         int result = BinarySearch.findNumberIndex(6, list, 0, list.length - 1);
