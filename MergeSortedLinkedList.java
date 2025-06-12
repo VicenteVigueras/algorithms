@@ -20,25 +20,26 @@ class Solution {
         ListNode tail = ans;
         
         while (list1 != null && list2 != null) {
-            // System.out.println( "[" + list1.val + " , " + list2.val + "]");
             if(list1.val == list2.val) {
-                System.out.println(list1.val);
-                System.out.println(list2.val);
-                ans = list1;
-            }
-            if (list1.val < list2.val) {
-                System.out.println(list1.val);
-                System.out.println(list2.val);
-                ans = list1;
-            }
-            if (list1.val > list2.val) {
-                System.out.println(list2.val);
-                System.out.println(list1.val);
-                ans = list2;
+                tail.next = list1;
+                tail = tail.next;
+                list1 = list1.next;
+            } else if (list1.val < list2.val) {
+                tail.next = list1;
+                tail = tail.next;
+                list1 = list1.next;
+            } else if (list1.val > list2.val) {
+                tail.next = list2;
+                tail = tail.next;
+                list2 = list2.next;
             } 
-            list1 = list1.next;
-            list2 = list2.next;
         }
-        return ans;
+
+        if (list1 != null) {
+            tail.next = list1;
+        } else if (list2 != null) {
+            tail.next = list2;
+        }
+        return ans.next;
     }
 }
