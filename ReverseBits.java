@@ -1,20 +1,12 @@
+// runs on O(1) time and space, however BigO tells us about scalability, not absolute speed/space
+// therefore reversing bits with bitwise operators will still be much faster
 public class Solution {
     // you need treat n as an unsigned value
     public int reverseBits(int n) {
-        System.out.println(n);
-        StringBuilder binary = new StringBuilder(Integer.toBinaryString(n));
-        System.out.println(binary.toString());
-        String binaryAsString = binary.toString(); 
-        StringBuilder reversed = new StringBuilder();
-        for(int i = 0; i < binaryAsString.length(); i++) {
-            if(binaryAsString.charAt(i) == '1') {
-                reversed.append('0');
-            } else {
-                reversed.append('1');
-            }
-        }
-        System.out.println(reversed.toString());
-        int answer = Integer.parseInt(reversed.toString(),2);
-        return answer;
+        StringBuilder binary = new StringBuilder(String.format("%32s", Integer.toBinaryString(n)).replace(' ', '0'));
+        binary = binary.reverse();
+        var answer = (int) Long.parseLong(binary.toString(),2);
+        return  answer;
     }
 }
+ //TODO: Implement bitwise solution
