@@ -1,3 +1,9 @@
+    /* 
+    Problem: Leetcode 260; Difficulty Easy
+    Time-complexity: O(n)
+    Space-complexity: O(n) 
+    */ 
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -8,7 +14,7 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution {
+class ReverseLinkedList {
     public ListNode reverseList(ListNode head) {
         var arr = new ArrayList<Integer>();
         ListNode ans = null;
@@ -18,17 +24,23 @@ class Solution {
             head = head.next;
         }
         Collections.reverse(arr);
- for (int val : arr) {
+        for (int val : arr) {
             ListNode current = new ListNode(val);
             if (ans == null) {
-                ans = current;      // first node is the head
-                tail = current;     // tail starts at head
+                ans = current;      
+                tail = current;     
             } else {
-                tail.next = current; // link new node
-                tail = current;      // move tail forward
+                tail.next = current; 
+                tail = current;     
             }
         }
         System.out.println(arr);
         return ans;
     }
 }
+
+    /* 
+    Can it be better? 
+    Space can be improved to O(1) when doing in-place reverse, 
+    No extra storage would be needed. 
+    */
