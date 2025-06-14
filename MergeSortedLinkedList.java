@@ -1,3 +1,8 @@
+    /* 
+    Problem: Leetcode 21; Difficulty Easy
+    Time-complexity: O(n+m)
+    Space-complexity: O(1) 
+    */ 
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -43,3 +48,7 @@ class MergeSortedLinkedList {
         return ans.next;
     }
 }
+    /* 
+    Can it be better?
+    No, this is the optimal approach
+    */
