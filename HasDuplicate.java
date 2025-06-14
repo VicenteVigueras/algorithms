@@ -1,5 +1,3 @@
-import java.util.HashSet;
-
 class HasDuplicate {
     public boolean hasDuplicate(int[] nums) {
      var seen = new HashSet<Integer>();

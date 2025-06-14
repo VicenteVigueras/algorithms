@@ -1,4 +1,4 @@
-class Solution {
+class isValid {
     public boolean isValid(String s) {
         var stack = new Stack<Character>();
         if (s.length() == 0 || s.length() == 1) {
