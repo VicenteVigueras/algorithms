@@ -1,6 +1,10 @@
-// runs on O(1) time and space, however BigO tells us about scalability, not absolute speed/space
-// therefore reversing bits with bitwise operators will still be much faster
-public class Solution {
+    /* 
+    Problem: Leetcode 190; Difficulty Easy
+    Time-complexity: O(1)
+    Space-complexity: O(1) 
+    */ 
+
+public class ReverseBits {
     // you need treat n as an unsigned value
     public int reverseBits(int n) {
         StringBuilder binary = new StringBuilder(String.format("%32s", Integer.toBinaryString(n)).replace(' ', '0'));
@@ -9,4 +13,9 @@ public class Solution {
         return  answer;
     }
 }
- //TODO: Implement bitwise solution
+
+   /* 
+   Although O(1) for time and space, BigO tells us about scalability, not absolute speed/space.
+   Therefore using bitwise operators will be much faster
+   TODO: Implement bitwise solution 
+   */
