@@ -1,5 +1,8 @@
-import java.util.HashMap;
-import java.util.Map;
+    /* 
+    Problem: Leetcode 1; Difficulty Easy
+    Time-complexity: O(n)
+    Space-complexity: O(n) 
+    */ 
 
 class TwoSum {
  public static int[] twoSum(int[] nums, int target) {
@@ -14,3 +17,9 @@ class TwoSum {
     return new int[] {};
  }   
 }
+
+    /* 
+    Can this be better?
+    According to AI this can be better by sorting and using 2 pointers
+    TODO: Implement sort and 2 pointers method
+    */ 
