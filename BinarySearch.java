@@ -1,4 +1,11 @@
+    /* 
+    Problem: Implement Binary Search
+    Time-complexity: O(log n)
+    Space-complexity: O(log n)
+    */ 
+
 class BinarySearch {
+    //Test Implementation
     public static void main(String[] args) {
         int[] list = {1, 2, 3, 4, 5, 6, 7};
         int result = BinarySearch.findNumberIndex(6, list, 0, list.length - 1);
@@ -9,7 +16,6 @@ class BinarySearch {
         if (start > end) {
             return -1; 
         }
-
         int mid = (start + end) / 2;
 
         if (list[mid] == target) {
@@ -21,3 +27,10 @@ class BinarySearch {
         }
     }
 }
+    /*
+    Can it be better?
+    Yes, by solving iteratively:
+    Time-complexity: O(log n)
+    Space-complexity: O(1)
+    TODO: Figure out how to do this
+    */
