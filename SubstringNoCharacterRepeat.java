@@ -1,3 +1,8 @@
+    /* 
+    Problem: Leetcode 3; Difficulty Medium 
+    Time-complexity: O(n)
+    Space-complexity: O(min(n, m))
+    */
 class SubstringNoCharacterRepeat {
     public int lengthOfLongestSubstring(String s) {
         Set<Character> seen = new HashSet<>();
@@ -18,3 +23,5 @@ class SubstringNoCharacterRepeat {
         return maxCount;
     }
 }
+
+    /* Already as efficient as it can be */
