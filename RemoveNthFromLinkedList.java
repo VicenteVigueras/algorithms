@@ -8,34 +8,33 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class RemoveNthFromLinkedList {
+class Solution {
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        int i = 1;
-        var start = head;
-        var ans = start;
-        while(head.next != null && head != null) {
-            i++;
-            head = head.next;
+        var slowCount = 0;
+        var fast = head;
+        var slow = head;
+        var start = slow;
+        for (int i = 0; i < n; i++) {
+            fast = fast.next;
+
         }
-        if(i == 1 && n == 1) {
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            slowCount++;
+            System.out.println("slow: " + slow.val);
+            fast = fast.next;
+            System.out.println("fast: " + fast.val);
+        }
+        if (slowCount == 0) {
             head = null;
             return head;
         }
-        if(i == 1) {
-            System.out.println("hello");
-            return head;
+        if (slow.next != null) {
+            slow.next = slow.next.next;
+            System.out.println("hey");
         }
 
-
-        int position = i - n;
-        int j = 1;
-        while(start != null && start.next != null) {
-            if(j == position) {
-                start.next = start.next.next;
-            }
-            start = start.next;
-            j++;
-        }
-        return ans;
+        return start;
     }
+
 }
