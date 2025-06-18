@@ -8,34 +8,25 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution {
+class RemoveNthFromLinkedList {
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        var slowCount = 0;
-        var fast = head;
-        var slow = head;
-        var start = slow;
+        ListNode dummy = new ListNode();
+        var fast = dummy;
+        var slow = dummy;
+        dummy.next = head;
+
         for (int i = 0; i < n; i++) {
             fast = fast.next;
 
         }
-        while (fast != null && fast.next != null) {
+        while (fast.next != null) {
             slow = slow.next;
-            slowCount++;
-            System.out.println("slow: " + slow.val);
             fast = fast.next;
-            System.out.println("fast: " + fast.val);
-        }
-        if (slowCount == 0) {
-            head = null;
-            return head;
-        }
-        if (slow.next != null) {
-            slow.next = slow.next.next;
-            System.out.println("hey");
         }
 
-        return start;
-        // failing test case head = [1,2], n = 1
+        slow.next = slow.next.next;
+
+        return dummy.next;
     }
 
 }
